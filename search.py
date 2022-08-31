@@ -17,17 +17,26 @@ except ImportError:
         install('google')
         install('beautifulsoup4')
     except:
-        print('You got error try installing manual')
-        
+        print('You got error try installing manual [module "google,beautifulsoup4"]')
+
+try:
+    from termcolor import colored 
+except ImportError:
+    try:
+        input("No module named 'google' found. press any key to install..")
+        install('termcolor')
+    except:
+        print('You got error try installing manual [module "termcolor"]')
+
 def ALLlinks():
     try:
         query = "site:"+input('domain: ')
         with open('result.txt','w') as f:
             for j in search(query, num=100):
                 f.write(j+'\n')
+        print("filesaved: "+colored(os.popen('pwd').read().strip()+'/result.txt','green'))
     except ValueError:
         print('Wrong value;')
-
 def CUSTOM():
     try:
         query = input('Your query: ')
@@ -39,6 +48,7 @@ def CUSTOM():
             else:
                 for j in search(query, num=100):
                     f.write(j+'\n')
+        print("filesaved: "+colored(os.popen('pwd').read().strip()+'/result.txt','green'))
     except ValueError:
         print('Wrong value;')
 
@@ -55,6 +65,7 @@ def CUTTING_DOMAIN():
                     f.write(j+'\n')
         # cutting domains
         os.system("cut -d '/' -f 3 result.txt > cut-result.txt;rm result.txt")
+        print("filesaved: "+colored(os.popen('pwd').read().strip()+'/cut-result.txt','green'))
     except ValueError:
         print('Wrong value;')
 
