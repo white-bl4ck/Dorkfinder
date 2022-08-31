@@ -54,11 +54,11 @@ def delay_print(string):
         sys.stdout.flush()
         time.sleep(.02)
 
-delay_print('__        ___     _ _             _     _ _  _        _\n')
-delay_print("\ \      / / |__ (_) |_ ___      | |__ | | || |   ___| | __\n")
-delay_print(" \ \ /\ / /| '_ \| | __/ _ \_____| '_ \| | || |_ / __| |/ /\n")
-delay_print("  \ V  V / | | | | | ||  __/_____| |_) | |__   _| (__|   <\n")
-delay_print("   \_/\_/  |_| |_|_|\__\___|     |_.__/|_|  |_|  \___|_|\_\ \n")
+delay_print('__        _______ ____ \n')
+delay_print("\ \      / / ____| __ )\n")
+delay_print(" \ \ /\ / /|  _| |  _ \ \n")
+delay_print("  \ V  V / | |___| |_) |\n")
+delay_print("   \_/\_/  |_____|____/ \n\n")
 delay_print("https://white_bl4ck.t.me\n")
 print('-----------------------------------------------------------\n\n')
 
