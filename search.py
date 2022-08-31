@@ -1,14 +1,24 @@
 import os
 import time
 import sys
+import pip
+
+def install(package):
+    if hasattr(pip, 'main'):
+        pip.main(['install', package])
+    else:
+        pip._internal.main(['install', package])
 
 try:
     from googlesearch import search
 except ImportError:
-    input("No module named 'google' found. press any key to install..")
-    os.system('pip3 install google')
-    os.system('pip3 install google')
-
+    try:
+        input("No module named 'google' found. press any key to install..")
+        install('google')
+        install('beautifulsoup4')
+    except:
+        print('You got error try installing manual')
+        
 def ALLlinks():
     try:
         query = "site:"+input('domain: ')
