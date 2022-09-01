@@ -46,6 +46,7 @@ except ImportError:
         print('Run again;')
         exit()
 
+
 def ALLlinks():
     try:
         where_i_am = 0
@@ -101,17 +102,28 @@ def CUTTING_DOMAIN():
     except ValueError:
         print('Wrong value;')
 
+def banner():
+    return '''
+            
+
+ █     █░▓█████  ▄▄▄▄      ▄▄▄█████▓▓█████ ▄▄▄       ███▄ ▄███▓
+▓█░ █ ░█░▓█   ▀ ▓█████▄    ▓  ██▒ ▓▒▓█   ▀▒████▄    ▓██▒▀█▀ ██▒
+▒█░ █ ░█ ▒███   ▒██▒ ▄██   ▒ ▓██░ ▒░▒███  ▒██  ▀█▄  ▓██    ▓██░
+░█░ █ ░█ ▒▓█  ▄ ▒██░█▀     ░ ▓██▓ ░ ▒▓█  ▄░██▄▄▄▄██ ▒██    ▒██ 
+░░██▒██▓ ░▒████▒░▓█  ▀█▓     ▒██▒ ░ ░▒████▒▓█   ▓██▒▒██▒   ░██▒
+░ ▓░▒ ▒  ░░ ▒░ ░░▒▓███▀▒     ▒ ░░   ░░ ▒░ ░▒▒   ▓▒█░░ ▒░   ░  ░
+  ▒ ░ ░   ░ ░  ░▒░▒   ░        ░     ░ ░  ░ ▒   ▒▒ ░░  ░      ░
+  ░   ░     ░    ░    ░      ░         ░    ░   ▒   ░      ░   
+    ░       ░  ░ ░                     ░  ░     ░  ░       ░   
+                      ░                                                                   '''
+        
 def delay_print(string):
     for char in string:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(.02)
+        time.sleep(0.01)
 
-delay_print('__        _______ ____ \n')
-delay_print("\ \      / / ____| __ )\n")
-delay_print(" \ \ /\ / /|  _| |  _ \ \n")
-delay_print("  \ V  V / | |___| |_) |\n")
-delay_print("   \_/\_/  |_____|____/ \n\n")
+print(colored(banner(),'red'))
 delay_print("https://white_bl4ck.t.me\n")
 delay_print('-----------------------------------------------------------\n\n')
 
