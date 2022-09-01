@@ -33,7 +33,7 @@ def ALLlinks():
         where_i_am = 0
         query = "site:"+input('domain: ')
         with open('result.txt','w') as f:
-            for j in search(query,num=100):
+            for j in search(query,num=20):
                 f.write(j+'\n')
                 where_i_am += 1
                 print('number '+colored(str(where_i_am),'green')+' discovered')
@@ -48,12 +48,12 @@ def CUSTOM():
         howmuch = int(input('How much url? [0 for all] '))
         with open('result.txt','w') as f:
             if not howmuch == 0:
-                for j in search(query, num=100, stop=howmuch):
+                for j in search(query, num=20, stop=howmuch):
                     f.write(j+'\n')
                     where_i_am += 1
                     print('number: '+colored(str(where_i_am),'green')+' discovered from '+colored(str(howmuch),'green'))
             else:
-                for j in search(query, num=100):
+                for j in search(query, num=20):
                     f.write(j+'\n')
                     where_i_am += 1
                     print('number: '+colored(str(where_i_am),'green')+' discovered from '+colored(str(howmuch),'green'))
@@ -68,12 +68,12 @@ def CUTTING_DOMAIN():
         howmuch = int(input('How much url? [0 for all] '))
         with open('result.txt','w') as f:
             if not howmuch == 0:
-                for j in search(query, num=100, stop=howmuch):
+                for j in search(query, num=20, stop=howmuch):
                     f.write(j+'\n')
                     where_i_am += 1
                     print('number: '+colored(str(where_i_am),'green')+' discovered from '+colored(str(howmuch),'green'))
             else:
-                for j in search(query, num=100):
+                for j in search(query, num=20):
                     f.write(j+'\n')
                     where_i_am += 1
                     print('number: '+colored(str(where_i_am),'green')+' discovered from '+colored(str(howmuch),'green'))
