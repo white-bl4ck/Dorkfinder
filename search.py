@@ -1,13 +1,23 @@
 import os
 import time
 import sys
-import pip
+
 
 def install(package):
-    if hasattr(pip, 'main'):
-        pip.main(['install', package])
-    else:
-        pip._internal.main(['install', package])
+    os.system('pip3 install '+package)
+
+try:
+    import pip
+except ImportError:
+    try:
+        input("No module named 'pip' found. press any key to install..[using sudo for installing it. 'sudo apt update; sudo apt install python3-pip']")
+        os.system('sudo apt update; sudo apt install python3-pip')
+        print('Run again;')
+        exit()
+    except:
+        print('You got error try installing manual [module "termcolor"]')
+        print('Run again;')
+        exit()
 
 try:
     from googlesearch import search
@@ -16,17 +26,25 @@ except ImportError:
         input("No module named 'google' found. press any key to install..")
         install('google')
         install('beautifulsoup4')
+        print('Run again;')
+        exit()
     except:
         print('You got error try installing manual [module "google,beautifulsoup4"]')
+        print('Run again;')
+        exit()
 
 try:
     from termcolor import colored 
 except ImportError:
     try:
-        input("No module named 'google' found. press any key to install..")
+        input("No module named 'termcolor' found. press any key to install..")
         install('termcolor')
+        print('Run again;')
+        exit()
     except:
         print('You got error try installing manual [module "termcolor"]')
+        print('Run again;')
+        exit()
 
 def ALLlinks():
     try:
