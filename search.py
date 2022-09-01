@@ -30,39 +30,53 @@ except ImportError:
 
 def ALLlinks():
     try:
+        where_i_am = 0
         query = "site:"+input('domain: ')
         with open('result.txt','w') as f:
-            for j in search(query, num=100):
+            for j in search(query,num=100):
                 f.write(j+'\n')
+                where_i_am += 1
+                print('number '+colored(str(where_i_am),'green')+' discovered')
         print("filesaved: "+colored(os.popen('pwd').read().strip()+'/result.txt','green'))
     except ValueError:
         print('Wrong value;')
+
 def CUSTOM():
     try:
+        where_i_am = 0
         query = input('Your query: ')
         howmuch = int(input('How much url? [0 for all] '))
         with open('result.txt','w') as f:
             if not howmuch == 0:
-                for j in search(query, num=10, stop=howmuch):
+                for j in search(query, num=100, stop=howmuch):
                     f.write(j+'\n')
+                    where_i_am += 1
+                    print('number: '+colored(str(where_i_am),'green')+' discovered from '+colored(str(howmuch),'green'))
             else:
                 for j in search(query, num=100):
                     f.write(j+'\n')
+                    where_i_am += 1
+                    print('number: '+colored(str(where_i_am),'green')+' discovered from '+colored(str(howmuch),'green'))
         print("filesaved: "+colored(os.popen('pwd').read().strip()+'/result.txt','green'))
     except ValueError:
         print('Wrong value;')
 
 def CUTTING_DOMAIN():
     try:
+        where_i_am = 0
         query = input('Your query: ')
         howmuch = int(input('How much url? [0 for all] '))
         with open('result.txt','w') as f:
             if not howmuch == 0:
-                for j in search(query, num=10, stop=howmuch):
+                for j in search(query, num=100, stop=howmuch):
                     f.write(j+'\n')
+                    where_i_am += 1
+                    print('number: '+colored(str(where_i_am),'green')+' discovered from '+colored(str(howmuch),'green'))
             else:
                 for j in search(query, num=100):
                     f.write(j+'\n')
+                    where_i_am += 1
+                    print('number: '+colored(str(where_i_am),'green')+' discovered from '+colored(str(howmuch),'green'))
         # cutting domains
         os.system("cut -d '/' -f 3 result.txt > cut-result.txt;rm result.txt")
         print("filesaved: "+colored(os.popen('pwd').read().strip()+'/cut-result.txt','green'))
@@ -81,11 +95,10 @@ delay_print(" \ \ /\ / /|  _| |  _ \ \n")
 delay_print("  \ V  V / | |___| |_) |\n")
 delay_print("   \_/\_/  |_____|____/ \n\n")
 delay_print("https://white_bl4ck.t.me\n")
-print('-----------------------------------------------------------\n\n')
+delay_print('-----------------------------------------------------------\n\n')
 
-
-what_to_do = int(input('[1] Detect all links cached on google from this domain \n[2] Custom dork \n[3] Cut domains for custom dork \nWhat to do? '))
-
+delay_print('[1] Detect all links cached on google from this domain)(And subdomains [If cached on google.]) \n[2] Custom dork \n[3] Cut domains for custom dork \nWhat to do? ')
+what_to_do = int(input())
 if what_to_do == 1:
     ALLlinks()
 if what_to_do == 2:
