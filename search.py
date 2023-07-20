@@ -124,7 +124,7 @@ def delay_print(string):
         time.sleep(0.01)
 
 print(colored(banner(),'red'))
-delay_print("https://white_bl4ck.t.me\n")
+delay_print("https://FedMan.t.me\n")
 delay_print('-----------------------------------------------------------\n\n')
 
 delay_print('[1] Detect all links cached on google from this domain)(And subdomains [If cached on google.]) \n[2] Custom dork \n[3] Cut domains for custom dork \nWhat to do? ')
